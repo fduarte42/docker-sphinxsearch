@@ -1,4 +1,4 @@
 #!/bin/sh
 
-indexer --all --rotate
+indexer --all
 searchd --nodetach
