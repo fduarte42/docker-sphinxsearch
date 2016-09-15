@@ -10,5 +10,7 @@ RUN chmod u+x /entrypoint.sh
 
 VOLUME ["/var/lib/sphinxsearch/data"]
 
+EXPOSE 9312 9306
+
 ENTRYPOINT ["/entrypoint.sh"]
 
