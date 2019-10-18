@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y sphinxsearch wget php7.0-cli php7.0-xmlreader php7.0-zip
+RUN apt-get update && apt-get upgrade -y && apt-get install -y sphinxsearch wget php7.0-cli php7.0-xmlreader php7.0-zip php7.0-curl
 RUN apt-get install -y cron && apt-get install -y supervisor
 
 RUN mkdir /var/www
