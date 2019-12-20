@@ -1,6 +1,8 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y sphinxsearch wget php7.0-cli php7.0-xmlreader php7.0-zip php7.0-curl
+ENV TERM "dumb"
+
+RUN apt-get update && apt-get upgrade -y && apt-get install -y sphinxsearch wget php7.2-cli php7.2-xmlreader php7.2-zip php7.2-curl php7.2-intl
 RUN apt-get install -y cron && apt-get install -y supervisor
 
 RUN mkdir /var/www
