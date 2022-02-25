@@ -11,9 +11,11 @@ apt -y install apt-transport-https lsb-release ca-certificates curl wget
 wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
 
-sed -i "s|deb http://deb.debian.org/debian bullseye main|deb http://deb.debian.org/debian bullseye main contrib|" /etc/apt/sources.list
+sed -i "s|deb http://deb.debian.org/debian bullseye main|deb http://deb.debian.org/debian bullseye backports main contrib|" /etc/apt/sources.list
 sed -i "s|deb deb http://security.debian.org/debian-security bullseye-security main|deb http://security.debian.org/debian-security bullseye-security main contrib|" /etc/apt/sources.list
 sed -i "s|deb http://deb.debian.org/debian bullseye-updates main|deb http://deb.debian.org/debian bullseye-updates main contrib|" /etc/apt/sources.list
+
+sh -c 'echo "deb http://deb.debian.org/debian bullseye-backports main contrib non-free" > /etc/apt/sources.list.d/backports.list'
 
 apt update
 apt upgrade -y
@@ -32,9 +34,11 @@ apt install -y \
   php${PHP_VERSION}-xml \
   php${PHP_VERSION}-zip \
   rsyslog \
+  sphinxsearch \
   sudo \
   supervisor \
-  unzip
+  unzip \
+  wget
 
 update-alternatives --set php /usr/bin/php${PHP_VERSION}
 
