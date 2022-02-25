@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -e "/tmp/crontab" ]; then
+    crontab -u root /tmp/crontab
+fi
+
+exec cron -f -L 15
