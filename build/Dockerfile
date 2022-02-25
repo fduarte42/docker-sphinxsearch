@@ -18,7 +18,7 @@ RUN bash /add-sourceguardian.sh && rm /add-sourceguardian.sh
 RUN rm /tmp/loaders.linux-*.tar.bz2
 
 # post-build
-COPY script/cron-foreground /usr/local/bin/cron-foreground
+COPY scripts/cron-foreground /usr/local/bin/cron-foreground
 RUN chmod 700 /usr/local/bin/cron-foreground
 COPY scripts/searchd-foreground /usr/local/bin/searchd-foreground
 RUN chmod 755 /usr/local/bin/searchd-foreground

@@ -52,9 +52,6 @@ echo "    AllowOverride All" >> /etc/apache2/conf-available/enable-htaccess.conf
 echo "</Directory>" >> /etc/apache2/conf-available/enable-htaccess.conf
 a2enconf enable-htaccess
 
-# apache disable unneeded config
-a2disconf javascript-common
-
 # apache enable modules
 a2enmod rewrite
 a2enmod headers
